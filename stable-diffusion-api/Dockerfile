@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.3.1-runtime-ubuntu20.04
+FROM nvidia/cuda:12.3.2-runtime-ubuntu22.04
 
 # docker build -t stable-diffusion .
 # docker run -it --gpus all --rm -p '5000:5000' -v $(pwd)/.cache/app:/root/.cache -v $(pwd)/stable-diffusion/models/ldm/stable-diffusion-v1/model.ckpt:/models/model.ckpt -e MODEL_DIR=/models stable-diffusion
@@ -35,4 +35,6 @@ COPY api api
 EXPOSE 5000 5000
 
 COPY entrypoint.sh .
-ENTRYPOINT ./entrypoint.sh
+
+RUN ["chmod", "+x", "./entrypoint.sh"]
+ENTRYPOINT ["bash", "./entrypoint.sh"]

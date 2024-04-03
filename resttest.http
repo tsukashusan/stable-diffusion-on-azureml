@@ -1,0 +1,18 @@
+@hostname = <hostname>
+@apikey = <apikey>
+
+GET /swagger.json
+Host: {{hostname}}
+Authorization: Bearer {{apikey}}
+
+###
+POST /api/txt2img
+Host: {{hostname}}
+Authorization: Bearer {{apikey}}
+Content-Type: application/json
+
+{
+    "prompt":"Astronaut riding a horse on the moon, realistic, 8k, high definition",
+    "n_samples":2,
+    "seed":123
+}

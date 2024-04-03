@@ -10,6 +10,12 @@ As the maintainer of this project, please make a few updates:
 - Understanding the security reporting process in SECURITY.MD
 - Remove this section from the README
 
+## git
+Set autocrlf setting.
+
+` git config --global core.autocrlf input `
+
+
 ## Swagger Codegen
 
 ```
